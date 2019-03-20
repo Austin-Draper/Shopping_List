@@ -29,7 +29,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QPushButton" name="loginSubmit">
@@ -209,25 +209,12 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>111</width>
+       <width>231</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
       <string>TextLabel</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="homeAddButton">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>40</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Add</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -328,30 +315,6 @@
       <string>Logout</string>
      </property>
     </widget>
-    <widget class="QSplitter" name="splitter_9">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>40</y>
-       <width>221</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Add Item:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="homeAddItemLineEdit"/>
-    </widget>
     <widget class="QPushButton" name="homeClearButton">
      <property name="geometry">
       <rect>
@@ -364,6 +327,46 @@
      <property name="text">
       <string>Clear</string>
      </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>85</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Add Item:</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>40</y>
+       <width>216</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="homeAddItemLineEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="homeAddButton">
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="page_3">

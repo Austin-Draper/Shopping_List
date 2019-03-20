@@ -8,10 +8,6 @@
  * (use setfocus at start of onclick when bool flag is set to true then return from onclick function so nothing else happens)
  * need to check if setfocus is already in highlight mode (if it is then that onclick should unhighlight instead by setting nofocus)
  * 4. add feature to place shopping locations into right side
- * 5. add feature to delete entire right side in one press (and yes/no dialog popup) both database and visual
- * [in mysql... DELETE * FROM list WHERE email = :email]
- * in visual listwidget... use ui->listwidget2->clear();
- * 6. encrypt the users passwords (try bcrypt)
  */
 int main(int argc, char *argv[])
 {

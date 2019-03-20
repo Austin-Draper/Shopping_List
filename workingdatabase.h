@@ -4,6 +4,8 @@
 #include <QSqlDatabase>
 #include <QMessageBox>
 #include <vector>
+#include <iostream>
+#include <QCryptographicHash>
 
 class workingDatabase
 {

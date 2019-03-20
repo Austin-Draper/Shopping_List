@@ -18,6 +18,7 @@ public:
     QString sec_item;
     void SetSecName(QString &name){sec_user_name = name;}
     void SetSecItem(QString &item){sec_item = item;}
+    void SetSecDialogLabelText (QString &text);
 
 private slots:
     void on_secYes_clicked();

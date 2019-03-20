@@ -1,3 +1,4 @@
+
 #include "widget.h"
 #include "ui_widget.h"
 #include "workingdatabase.h"
@@ -139,6 +140,8 @@ void Widget::on_loginSubmit_clicked()//after left_vector for loop, do the EXACT 
     logincheck = slave1.check_user(_email, _password);
     if(logincheck)
     {
+        ui->emailLineEdit->clear();
+        ui->passwordLineEdit->clear();
         ui->stackedWidget->setCurrentIndex(1);//navigates to homepage
         ui->welcomeLabel->setText("Welcome " + slave1.user_name);//_email
         slave1.setup_home_ui(_email, left_vector, right_vector);
@@ -155,15 +158,25 @@ void Widget::on_loginSubmit_clicked()//after left_vector for loop, do the EXACT 
         }
         QVector<QString>().swap(right_vector);
     }
+    QMessageBox msgBox1;
+    msgBox1.setText("User or Password Incorrect or not Registered!");
+    msgBox1.exec();
+    ui->passwordLineEdit->clear();
 }
 
 void Widget::on_registerButton_clicked()
 {
+    ui->emailLineEdit->clear();
+    ui->passwordLineEdit->clear();
     ui->stackedWidget->setCurrentIndex(2);//navigates to register page
 }
 
 void Widget::on_regBackButton_clicked()
 {
+    ui->regEmailLineEdit->clear();
+    ui->regUsernameLineEdit->clear();
+    ui->regPasswordLineEdit->clear();
+    ui->regPhoneLineEdit->clear();
     ui->stackedWidget->setCurrentIndex(0);//navigates to login page
 }
 
@@ -181,6 +194,10 @@ void Widget::on_regRegisterButton_clicked()
         QMessageBox msgBox1;
         msgBox1.setText("You have been Registered!");
         msgBox1.exec();
+        ui->regEmailLineEdit->clear();
+        ui->regUsernameLineEdit->clear();
+        ui->regPasswordLineEdit->clear();
+        ui->regPhoneLineEdit->clear();
         ui->stackedWidget->setCurrentIndex(0);
         return;
     }
@@ -192,11 +209,15 @@ void Widget::on_regRegisterButton_clicked()
 
 void Widget::on_unregisterButton_clicked()
 {
+    ui->emailLineEdit->clear();
+    ui->passwordLineEdit->clear();
     ui->stackedWidget->setCurrentIndex(3);
 }
 
 void Widget::on_unregisterBackButton_clicked()
 {
+    ui->unregisterEmailLineEdit->clear();
+    ui->unregisterPasswordLineEdit->clear();
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -212,6 +233,8 @@ void Widget::on_unregisterUnregisterButton_clicked()
         QMessageBox msgBox1;
         msgBox1.setText("You have been Unregistered!");
         msgBox1.exec();
+        ui->unregisterEmailLineEdit->clear();
+        ui->unregisterPasswordLineEdit->clear();
         ui->stackedWidget->setCurrentIndex(0);
         return;
     }
@@ -224,6 +247,7 @@ void Widget::on_unregisterUnregisterButton_clicked()
 void Widget::on_homeLogout_clicked()
 {
     ui->listWidget->clear();
+    ui->listWidget_2->clear();
     ui->stackedWidget->setCurrentIndex(0);
 
 }

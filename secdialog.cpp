@@ -17,6 +17,10 @@ secDialog::~secDialog()
     delete ui;
 }
 
+void secDialog::SetSecDialogLabelText (QString &text)
+{
+    ui->secDialogLabel->setText(text);
+}
 void secDialog::on_secYes_clicked()
 {
     QString user_name = sec_user_name;

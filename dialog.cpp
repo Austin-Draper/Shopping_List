@@ -69,8 +69,11 @@ void Dialog::on_dialogAcceptButton_clicked()
 void Dialog::on_dialogDeleteButton_clicked()
 {
     bool change;
+    QString text;
     QString _item = ui->dialog_item_text->text();
     secDialog _dialog;
+    text = "are you sure you want to delete: " + _item + "?";
+    _dialog.SetSecDialogLabelText(text);
     _dialog.SetSecName(user_name);
     _dialog.SetSecItem(_item);
     _dialog.setModal(true);

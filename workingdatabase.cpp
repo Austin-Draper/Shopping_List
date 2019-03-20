@@ -34,7 +34,14 @@ QSqlDatabase workingDatabase::connect_database(QSqlDatabase db)
 bool workingDatabase::check_user(QString _email, QString _password)
 {
     //this will call a function if user found to go to home page and display their info
+    QCryptographicHash hash(QCryptographicHash::Keccak_512);
+    QByteArray data_hash = _password.toLocal8Bit();
+    hash.addData(data_hash);
+    qDebug(hash.result().toHex());
+    _password = hash.result().toHex();
 
+
+    //BEFORE DOING THIS, WE NEED TO HASH THE PASSWORD AND MAKE SURE IT MATCHES THE HASH FOR REGISTERED USER
     QSqlQuery query;
     query.prepare("SELECT email, password, username FROM users WHERE email = :email AND password = :password");
     query.bindValue(":email", _email);
@@ -58,7 +65,12 @@ bool workingDatabase::check_user(QString _email, QString _password)
 
 bool workingDatabase::register_user(QString _email, QString _username, QString _password, QString _phone)
 {
-    //TODO: make a popup that says whether registration was successful or not. go to login page if success, stay on page if not successful
+    QCryptographicHash hash(QCryptographicHash::Keccak_512);
+    QByteArray data_hash = _password.toLocal8Bit();
+    hash.addData(data_hash);
+    qDebug(hash.result().toHex());
+    _password = hash.result().toHex();
+
     QSqlQuery query;
     query.prepare("SELECT email, password FROM users WHERE email = :email AND password = :password");
     query.bindValue(":email", _email);
@@ -83,7 +95,12 @@ bool workingDatabase::register_user(QString _email, QString _username, QString _
 
 bool workingDatabase::unregister_user(QString _email, QString _password)
 {
-    //TODO: make a popup that says whether registration was successful or not. go to login page if success, stay on page if not successful
+    QCryptographicHash hash(QCryptographicHash::Keccak_512);
+    QByteArray data_hash = _password.toLocal8Bit();
+    hash.addData(data_hash);
+    qDebug(hash.result().toHex());
+    _password = hash.result().toHex();
+
     QSqlQuery query;
     query.prepare("SELECT email, password FROM users WHERE email = :email AND password = :password");
     query.bindValue(":email", _email);
